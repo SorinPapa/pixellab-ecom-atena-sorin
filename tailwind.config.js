@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        'screen-1/3': '33w',
+        'screen-1/3': '33vw',
       },
     },
   },
