@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <>
-      <section className="flex lg:flex-col justify-between items-center h-full lg:py-4 z-10 relative">
+      <section className="bg-neutral-900 flex lg:flex-col justify-between items-center h-full lg:py-4 z-10  relative">
         <Link href="/">
           {/* no use for anchor */}
           {jsxVar}
@@ -18,7 +18,7 @@ export const Header = () => {
           title="Menu"
           type="button"
           onClick={() => {
-            setMenuOpen(!menuOpen)
+            setMenuOpen(!menuOpen);
           }}
         >
           <CgMenu size="32"></CgMenu>
@@ -27,13 +27,12 @@ export const Header = () => {
         <ul className="hidden lg:block">
           <li>{jsxVar}</li>
         </ul>
-
       </section>
 
       <nav
-        className={`absolute left-0 -top-full ${
+        className={`z-0 absolute left-0 -top-full ${
           menuOpen ? 'translate-y-full' : ''
-        } transition-transform transform-gpu w-screen h-screen lg:w-screen-1/3 bg-neutral-900`}
+        } transition-transform transform-gpu w-screen h-screen bg-neutral-900 lg:w-screen-1/3`}
       >
         <ul>
           <li>
@@ -44,13 +43,7 @@ export const Header = () => {
 
           <li>
             <Link href="/" title="Contact">
-              Contact Us
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/" title="About">
-              About us
+              Contact
             </Link>
           </li>
         </ul>

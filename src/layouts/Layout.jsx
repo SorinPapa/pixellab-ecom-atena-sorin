@@ -5,6 +5,7 @@ export const black = '#171717';
 export const white = '#fff';
 export const gray = '#f2f2f2';
 const mobileHeaderHeight = 60;
+const desktopHeaderSize = 80;
 
 export const Layout = ({ children }) => {
   const gridCss = css`
@@ -17,7 +18,7 @@ export const Layout = ({ children }) => {
 
     @media (min-width: 1024px) {
       grid-template-areas: 'header main-area';
-      grid-template-columns: 80px 1fr;
+      grid-template-columns: ${desktopHeaderSize}px 1fr;
       grid-template-rows: 1fr;
     }
   `;
@@ -33,6 +34,7 @@ export const Layout = ({ children }) => {
       top: 0;
       left: 0;
       bottom: 0;
+      width: ${desktopHeaderSize}px;
     }
   `;
 

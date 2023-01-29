@@ -9,7 +9,7 @@ export const ProductTile = ({ product }) => {
   }).format(price);
 
   return (
-    <article className='text-center'>
+    <article className="text-center">
       <header>
         <div>
           <Link href="/" title={title}>
