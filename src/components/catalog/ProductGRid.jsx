@@ -2,7 +2,7 @@ import { baseUrl } from '@/index';
 import { useEffect, useState } from 'react';
 import { ProductTile } from '.';
 
-export const ProductGrid = () => {
+export const ProductGrid = ({perRow='4/row'}) => {
   const [products, setProducts] = useState([]);
 
   console.log('rerender');
@@ -21,8 +21,14 @@ export const ProductGrid = () => {
     return <>There are no products</>;
   }
 
+  const gridCss=css`
+  display:grid;
+  row-gap:32px;
+
+  `;
+
   return (
-    <ul>
+    <ul className={gridCss}>
       {products.map((product) => {
         return (
           <li key={product.id}>
