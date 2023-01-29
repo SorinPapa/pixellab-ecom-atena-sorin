@@ -1,10 +1,14 @@
-import {CartControls} from '@/components/cart';
-import {GridControls} from '@/components/catalog';
-import { ProductGrid } from '@/components/catalog/ProductGrid';
+import { CartControls } from '@/components/cart';
+import { GridControls, ProductGrid } from '@/components/catalog';
 import { Layout } from '@/layouts';
 import Head from 'next/head';
+import { useState } from 'react';
 
 export default function Home() {
+  const [perRow, setItemsPerRow] = useState('4/row');
+
+  console.log('render home');
+
   return (
     <>
       <Head>
@@ -15,12 +19,13 @@ export default function Home() {
 
       <Layout>
         <main className="container px-4 mx-auto">
-          <header className='flex justify-end'>
-            <GridControls></GridControls>
+          <header className="flex justify-end">
+            <GridControls set={setItemsPerRow}></GridControls>
             <CartControls></CartControls>
           </header>
-          <section className='mt-16'>
-            <ProductGrid></ProductGrid>
+
+          <section className="mt-16">
+            <ProductGrid perRow={perRow}></ProductGrid>
           </section>
         </main>
       </Layout>
