@@ -1,10 +1,12 @@
 import { baseUrl } from '@/index';
+import { UiContext } from '@/pages/_app';
 import { css } from '@emotion/css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ProductTile } from '.';
 
-export const ProductGrid = ({ perRow = '4/row' }) => {
+export const ProductGrid = () => {
   const [products, setProducts] = useState([]);
+  const { itemsPerRow: perRow } = useContext(UiContext);
 
   // useMemo
   const itemsPerRow = parseInt(perRow);
