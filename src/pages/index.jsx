@@ -1,5 +1,6 @@
 import { CartControls } from '@/components/cart';
-import { GridControls, ProductGrid } from '@/components/catalog';
+import { GridControls } from '@/components/catalog';
+import { ProductGrid } from '@/components/catalog';
 import { Layout } from '@/layouts';
 import Head from 'next/head';
 import { useState } from 'react';
