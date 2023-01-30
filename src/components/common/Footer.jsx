@@ -1,3 +1,5 @@
+
+import {BsArrowUpSquare} from 'react-icons/bs'
 export const Footer = () => {
   return (
     <>
