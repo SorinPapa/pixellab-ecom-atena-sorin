@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <>
-      <section className="bg-neutral-900 flex lg:flex-col justify-between items-center h-full lg:py-4 z-10  relative">
+      <section className="flex lg:flex-col justify-between items-center h-full z-10 relative lg:py-8">
         <Link href="/">
           {/* no use for anchor */}
           {jsxVar}
@@ -34,7 +34,7 @@ export const Header = () => {
           menuOpen ? 'translate-y-full' : ''
         } transition-transform transform-gpu w-screen h-screen bg-neutral-900 lg:w-screen-1/3`}
       >
-        <ul>
+        <ul className="flex justify-center items-center flex-col h-full text-3xl gap-6 uppercase font-bold">
           <li>
             <Link href="/" title="Home">
               Home
@@ -44,6 +44,11 @@ export const Header = () => {
           <li>
             <Link href="/" title="Contact">
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link href="/" title="Contact">
+              About us
             </Link>
           </li>
         </ul>
