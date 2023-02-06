@@ -1,11 +1,11 @@
+import { Separator } from '../ui';
 
-import {BsArrowUpSquare} from 'react-icons/bs'
 export const Footer = () => {
   return (
     <>
       <section className="container mx-auto px-4">top footer</section>
 
-      <div className="border-t border-t-neutral-400"></div>
+      <Separator></Separator>
 
       <section className="container mx-auto px-4">bottom footer</section>
     </>
