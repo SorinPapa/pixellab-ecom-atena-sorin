@@ -1,8 +1,9 @@
 import { UiContext } from '@/pages/_app';
 import { useContext } from 'react';
+import { BsFillStopFill, BsFillGridFill } from 'react-icons/bs';
 
 const buttonClasses =
-  'flex justify-center items-center border-l border-zinc-200 w-20 h-20 transition-colors hover:bg-neutral-900';
+  'flex justify-center items-center border-l border-zinc-200 w-20 h-20 transition-colors hover:text-sky-700';
 
 export const GridControls = () => {
   const { itemsPerRow, setItemsPerRow } = useContext(UiContext);
@@ -20,7 +21,7 @@ export const GridControls = () => {
             setItemsPerRow('1/row');
           }}
         >
-          1
+          <BsFillStopFill></BsFillStopFill>
         </button>
       </li>
 
@@ -30,19 +31,20 @@ export const GridControls = () => {
           title="Two per row"
           className={`${buttonClasses} ${
             itemsPerRow === '2/row' ? 'bg-neutral-900 text-white' : ''
-          }`}
+          }transition-all hover:text-sky-700`}
           onClick={() => {
             setItemsPerRow('2/row');
           }}
         >
-          2
+          <BsFillStopFill></BsFillStopFill>
+          <BsFillStopFill></BsFillStopFill>
         </button>
       </li>
 
       <li>
         <button
           type="button"
-          title="Two per row"
+          title="Four per row"
           className={`${buttonClasses} ${
             itemsPerRow === '4/row' ? 'bg-neutral-900 text-white' : ''
           }`}
@@ -50,7 +52,7 @@ export const GridControls = () => {
             setItemsPerRow('4/row');
           }}
         >
-          4
+          <BsFillGridFill></BsFillGridFill>
         </button>
       </li>
     </ul>

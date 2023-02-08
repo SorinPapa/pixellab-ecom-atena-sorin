@@ -38,7 +38,7 @@ export const ProductGrid = () => {
     <ul className={gridCss}>
       {products.map((product) => {
         return (
-          <li key={product.id}>
+          <li key={product.id} className="hover:scale-50">
             <ProductTile product={product}></ProductTile>
           </li>
         );

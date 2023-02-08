@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 // keyName => key name in local storage
 export const useLocalStorage = (keyName, defaultValue) => {
   const [value, setValue] = useState(defaultValue);
+  const [cache, setCache] = useState('');
 
   useEffect(() => {
     console.log('I run once');
@@ -13,15 +14,17 @@ export const useLocalStorage = (keyName, defaultValue) => {
     // daca aveam ceva, il adaug in state
     if (savedValue !== null) {
       setValue(savedValue);
+      setCache(savedValue);
     }
   }, [setValue, keyName]);
 
   useEffect(() => {
     // no early returns
-    if (value !== defaultValue) {
+    if (value !== cache) {
       localStorage.setItem(keyName, value);
+      setCache(value);
     }
-  }, [value, keyName, defaultValue]);
+  }, [value, keyName, cache]);
 
   return [value, setValue];
 };
