@@ -8,7 +8,7 @@ import { AiFillTwitterCircle, AiFillGoogleCircle } from 'react-icons/ai';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const jsxVar = <span className="bg-white block w-4 h-4 rounded-full"></span>;
+
 
   return (
     <>

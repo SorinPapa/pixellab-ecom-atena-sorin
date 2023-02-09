@@ -1,13 +1,18 @@
 import { UiContext } from '@/pages/_app';
 import { useContext } from 'react';
 import { BsFillStopFill, BsFillGridFill } from 'react-icons/bs';
+import { useIsMobile } from '@/hooks';
 
 const buttonClasses =
   'flex justify-center items-center border-l border-zinc-200 w-20 h-20 transition-colors hover:text-sky-700';
 
 export const GridControls = () => {
   const { itemsPerRow, setItemsPerRow } = useContext(UiContext);
+    const isMobile = useIsMobile();
 
+    if (isMobile === true) {
+      return <></>;
+    }
   return (
     <ul className="border border-l-0 border-zinc-200 hidden lg:flex">
       <li>
